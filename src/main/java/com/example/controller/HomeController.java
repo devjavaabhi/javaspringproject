@@ -32,7 +32,7 @@ public class HomeController {
 
         if(true){
         //    throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Foo Not Found");
-      throw new RecordNotFoundException("Record not Found");
+      throw new RecordNotFoundException("Record not Found:Branch");
         }
 
       return new ResponseEntity<List<Employee>>(listOfEmployee, HttpStatus.OK);
@@ -43,7 +43,7 @@ public class HomeController {
 
             try {
                 Employee emp1 = employeeService.createEmployee(employee);
-
+                System.out.println("Branch merge");
                 return new ResponseEntity<>(emp1, HttpStatus.CREATED);
             } catch (Exception e) {
                 return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
