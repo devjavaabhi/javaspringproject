@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.exception.RecordNotFoundException;
-import com.example.model.Employee;
+import com.example.model.Employee;https://github.com/devjavaabhi/javaspringproject/blob/master/src/main/java/com/example/controller/HomeController.java
 import com.example.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +32,7 @@ public class HomeController {
 
         if(true){
         //    throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Foo Not Found");
-      throw new RecordNotFoundException("Record not Found:Branch");
+      throw new RecordNotFoundException("Record not Found :Changes for merge");
         }
 
       return new ResponseEntity<List<Employee>>(listOfEmployee, HttpStatus.OK);
@@ -43,7 +43,7 @@ public class HomeController {
 
             try {
                 Employee emp1 = employeeService.createEmployee(employee);
-                System.out.println("Branch merge");
+
                 return new ResponseEntity<>(emp1, HttpStatus.CREATED);
             } catch (Exception e) {
                 return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
